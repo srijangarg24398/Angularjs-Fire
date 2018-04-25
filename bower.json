@@ -1,0 +1,14 @@
+{
+  "name": "Angularjs-Fire",
+  "description": "Sample app for using firebase with angularjs",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.6.1",
+    "angular-route": "~1.6.1",
+    "angular-loader": "~1.6.1",
+    "angular-mocks": "~1.6.1",
+    "html5-boilerplate": "^5.3.0",
+    "angularfire": "^2.3.0",
+    "firebase": "^4.12.0"
+  }
+}

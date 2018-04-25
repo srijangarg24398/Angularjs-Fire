@@ -1,0 +1,95 @@
+<br><br>
+<div class="row" ng-controller="ContactsCtrl">
+  <div class="col-md-5">
+    
+    <!-- Add Contact -->
+
+    <form class="form-add" ng-submit="addContact()" ng-if="addFormShow">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Add Contacts</h1>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputName">Name</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Enter Name" ng-model="addContactForm.name" required autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ng-model="addContactForm.email" required>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputPhone">Phone Number</label>
+        <input type="number" id="inputPhone" class="form-control" placeholder="Phone Number" ng-model="addContactForm.phone" required>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> I accept the terms and conditions.
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Add Contact</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+
+    <!-- Add Contact Ends -->
+
+    <!-- Edit Contact -->
+    <form class="form-edit" ng-submit="editContact()" ng-if="!addFormShow">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Edit Contacts</h1>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputName">Name</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Enter Name" ng-model="editContactForm.name" required autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ng-model="editContactForm.email" required>
+      </div>
+
+      <div class="form-label-group">
+        <label for="inputPhone">Phone Number</label>
+        <input type="number" id="inputPhone" class="form-control" placeholder="Phone Number" ng-model="editContactForm.phone" required>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> I accept the terms and conditions.
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Edit Contact</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+    <!-- Edit Contact Ends -->
+  </div>
+  <div class="col-md-7">
+    <h3>All Contacts</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th class="text-center">Edit / Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts">
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.phone}}</td>
+          <td class="text-center">
+            <a class="btn btn-info btn-round" ng-click="showEditContactForm(contact)"></a> &nbsp;
+            <a class="btn btn-danger btn-round" ng-click="removeContact(contact)"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
